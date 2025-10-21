@@ -99,9 +99,17 @@ export default function PatientsPage() {
                 <Link href={`/patients/${patient.id}`} className="text-primary-600 hover:text-primary-800 font-medium text-sm">
                   View Profile
                 </Link>
-                <Link href={`/patients/match/${patient.id}`} className="btn-secondary text-sm">
-                  Find Activities
-                </Link>
+                <div className="flex space-x-2">
+                  <Link href={`/patients/chat/${patient.id}`} className="flex items-center px-3 py-1 bg-velvet text-white rounded-full text-xs hover:bg-velvet-dark transition-colors">
+                    <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+                    </svg>
+                    AI Plan
+                  </Link>
+                  <Link href={`/patients/match/${patient.id}`} className="btn-secondary text-xs">
+                    Find Activities
+                  </Link>
+                </div>
               </div>
             </div>
           ))}

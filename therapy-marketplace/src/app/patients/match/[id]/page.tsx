@@ -257,9 +257,17 @@ export default function PatientMatchPage({ params }: { params: { id: string } })
           <div className="gradient-card p-6 mb-6">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-xl font-semibold text-primary-700">Recommended Activities</h2>
-              <span className="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">
-                {matchedActivities.length} Matches
-              </span>
+              <div className="flex space-x-3 items-center">
+                <Link href={`/patients/chat/${id}`} className="flex items-center px-3 py-1 bg-velvet text-white rounded-full text-sm hover:bg-velvet-dark transition-colors">
+                  <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+                  </svg>
+                  Generate AI Plan
+                </Link>
+                <span className="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">
+                  {matchedActivities.length} Matches
+                </span>
+              </div>
             </div>
             
             <p className="text-gray-600 mb-6">
